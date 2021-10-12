@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 1 | Demo</title>
+
+    <!--in document CSS styling below-->
+    <style type="text/css">
+    /*inside of the -style- you must write in CSS also this is a CSS comment*/
+        /*there are three ways to select elements to style*/
+        /*By elemenet (tag) type*/
+
+        body {background-color:rgb(163, 163, 163);
+        color: white; /*FONT color*/
+        background-image:url(images/body_bg.png)}
+
+        h2{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+
+        p{font-size:16pt}
+
+        /*style by class - a collection of elements that have the same class value*/
+        .group {color:rgb(0, 3, 165)}
+
+        /*style a specific element by ID*/
+        #batman {border:5px solid #ffffff;/*hexadecimal color*/}
+
+    </style>
 </head>
 <body>
     <!--This is how you write HTML comments-->
@@ -12,18 +34,18 @@
     <!--BLOCK LEVEL ELEMENTS: create page structure, always start on new lines, and span the width of the entire page-->
 
     <!--Heading Tags (there are 6)-->
-    <h1>Heading 1</h1> <!--biggest! only ONE h1 per paage allowed!-->
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6><!--smallest-->
+    <h1 style="border:1px solid rgb(23, 25, 151);">Heading 1</h1> <!--biggest! only ONE h1 per paage allowed!-->
+    <h2 style="background-color: rgb(0, 165, 49);">Heading 2</h2>
+    <h3 style="border:2px solid indigo;">Heading 3</h3>
+    <h4 style="background-color:lightblue;">Heading 4</h4>
+    <h5 style="border:4px solid darkgrey;">Heading 5</h5>
+    <h6 style="background-color: yellow">Heading 6</h6><!--smallest-->
 
     <!--below is a horizonatal rule which is block level element-->
     <hr>
 
     <!--inserting images-->
-    <img src="images/batmobile.jpg" alt="rich orphan supercar" title="cowabunga batman!" />
+    <img src="images/batmobile.jpg" alt="rich orphan supercar" title="cowabunga batman!" id="batman"/>
     <!--src attribute describes where the image fine is-->
     <!--alt attribute helps SEO as well as utilized by those who use screen readers-->
     <img src="images/car.jpg" alt="futuristic concept car" title="what do you call a can opener that doesn't work? a can't opener" />
@@ -35,17 +57,38 @@
     <ol>
         <!--list items add something to the lst-->
         <li>shrek</li>
-        <li>shrek 2</li>
+        <li class="group">shrek 2</li>
         <li>shrek 3</li>
 
     </ol>
 
     <!--unordered lists are bulleted-->
     <ul>
-        <li>corey in the house</li>
+        <li class="group">corey in the house</li>
         <li>big bang theory</li>
         <li>bazinga</li>
     </ul>
+
+    <!--paragragh tag: also block level element-->
+    <p class="group">Wafer cupcake soufflé. Ice cream marzipan macaroon. Cotton candy jelly pastry jelly-o donut.</p> 
+        
+        <!--breakspace, can also be added without a new line-->
+        <br>
+        <br>
+        <p>Lemon drops cake chupa chups tart <span id="orange">biscuit chupa chups croissant brownie.</span> Dragée macaroon croissant macaroon croissant muffin wafer macaroon jelly .<br> Sweet roll jujubes wafer chupa chups pastry. Chupa chups tootsie roll tart macaroon soufflé fruitcake tiramisu. Cotton candy icing biscuit bear claw chocolate jelly pudding.</p>
+
+        <!--In line tags-->
+        <!-- these are not block elvel tags, they are used in-line with other elements (usually used inside of <p>)-->
+
+        <p class="group">we can make text <b>bold</b> using the bold tag</p>
+        <p>we can make text <i>italic</i> using the italic tag</p>
+        <p>we can make text <u>underlined</u> using the underlined tag</p>
+
+        <!--special SEO inline tags-->
+        <p>we can also make text <strong>bold</strong> using the strong tag</p>
+        <p>we can also make text <em>italiczed</em> using the emphasis tag</p>
+
+        <!--questions for the test and their answers-->
 
 
 </body>
