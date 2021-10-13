@@ -1,0 +1,92 @@
+/*stylesheet for week 2 day 2 demo*/
+
+/*BACKGROUND-----------------------------------------*/
+body {
+    background-color: #999999;
+    /*background-image:url(-filepath+name)*/
+}
+/*WRAPPER--------------------------------------------*/
+#wrapper {
+    /*to center, first give a width*/
+    width:780px;
+    /*next, add a margin: auto*/
+    margin:auto; /*auto space on left & right*/
+    border:1px solid black;
+    background-color: #abafb1;
+
+    /*adds space between content and the border*/
+    padding:10px; /*top, right, bottom, left*/
+}
+
+/*HEADER---------------------------------------------*/
+h1 {
+    color:rgb(59, 27, 199); /*text color*/
+    text-align: center;
+
+    /*center text vertically*/
+    /*must be equal to height*/
+    line-height: 100px;
+    height:100px;
+}
+
+#header {
+    
+    background-color:rgb(255, 255, 255);
+
+}
+/*NAV------------------------------------------------*/
+#nav{
+
+    width:780px;
+    height:50px;
+    background-color:darkgray;
+    border-top:1px solid black;
+}
+
+#buttons {
+
+    margin:auto;
+    width:315px;
+    height:50px;
+
+}
+
+.btn { /*these are all anchor tags (links)*/
+
+    display:block;
+    float:left;
+    width:100px;
+    height:50px;
+    margin-right:2px; /*space to the right*/
+    line-height:50px;
+    text-align:center;
+    /*remoces underline*/
+    text-decoration:none;
+    background-color:cornsilk;
+    font-weight:bold;
+    color:black;
+
+}
+/*four link states: regular link, hover, active, visited*/
+.btn:hover{
+    background-color:darkkhaki;
+}
+
+.btn:active{
+    background-color:rgb(124, 121, 78);
+}
+
+.btn:visited{
+    color:dimgray;
+}
+
+/*CONTENT--------------------------------------------*/
+
+
+/*FOOTER---------------------------------------------*/
+#footer {
+    width: 760px;
+    height:40px;
+    text-align:center;
+    font-size:10px;
+}
