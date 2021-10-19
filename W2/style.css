@@ -1,3 +1,27 @@
 body {
-    background-color: aqua;
+    background-color: rgb(28, 43, 133);
+    color:aqua;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size:18px;
+    
+}
+
+#container {
+    width:970px;
+    padding:10px;
+    margin:auto;
+}
+
+#header {
+    width: 950px;
+    padding:10px;
+    text-align:center;
+    background-color:blue;
+    border:2px solid cornflowerblue
+}
+
+.sections {
+    width: 950px;
+    padding: 10px;
+    background-color:darkcyan;
 }
