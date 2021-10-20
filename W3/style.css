@@ -1,0 +1,63 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: darkgrey;
+}
+/*this entire thing is just spaghetti code i am so sorry*/
+#container{
+    background-color: slategrey;
+    border:1px solid black;
+    width:1000px;
+    margin:auto;
+}
+
+h1{
+    padding-left: 10px;
+}
+
+#nav{
+    width:1000px;
+    height:50px;
+    background-color:darkgray;
+    margin:auto;
+}
+
+#buttons {
+    margin:auto;
+    width:500px;
+    height:40px;
+
+}
+
+.btn{
+    float:left; /*allows buttons to be next to eachother*/
+    width:100px;
+    height:40px;
+    background-color: black;
+    color:white;
+    text-decoration:none; /*removes underline*/
+    font-size:14px;
+    font-weight:bold;
+    text-align:center; /*horizontal text slignment*/
+    line-height:40px;/*vertical text alignment*/
+    margin-right:50px;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background-color:slategrey;
+    color:rgb(255, 255, 255);
+}
+
+#content{
+    width:985px;
+    margin:auto;
+    background-color: dimgrey;
+    border:1px solid black;
+    color:limegreen;
+    font-size:30px;
+    padding-left: 15px;
+}
+
+#bio{
+    background-color: magenta;
+}

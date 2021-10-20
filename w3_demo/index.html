@@ -10,20 +10,24 @@
 <body>
 
     <div id="fixed"></div>
+    <div id="top"></div>
 
     <!--In the index.html body element, create a div with an id of "wrapper" -->
     <div id="wrapper">
+        <div id="main-header">  
 
-        <!--Inside of the #wrapper div, create an h1 tag that includes the following text content: Week 3 | Demo -->
-        <h1>week 3 | demo</h1>
-        <!--Below the h1, create a div with an id of "main-nav"-->
-        <div id="main-nav">
-            <!--Inside of the #main-nav, create three anchor tags, each with a class of "btn"-->
-            <!--Give the anchor tags the text content for external page links: About, Hobbies, and Schools-->
-            <a class="btn" href="index.html">Home</a>
-            <a class="btn" href="hobbies.html">Hobbies</a>
-            <a class="btn" href="schools.html">School</a>
-        </div>
+            <!--Inside of the #wrapper div, create an h1 tag that includes the following text content: Week 3 | Demo -->
+            <h1>week 3 | <a href="https://www.google.com"
+            target="_blank">demo</a></h1>
+            <!--Below the h1, create a div with an id of "main-nav"-->
+            <div id="main-nav">
+                <!--Inside of the #main-nav, create three anchor tags, each with a class of "btn"-->
+                <!--Give the anchor tags the text content for external page links: About, Hobbies, and Schools-->
+                <a class="btn" href="index.html">Home</a>
+                <a class="btn" href="hobbies.html">Hobbies</a>
+                <a class="btn" href="schools.html">School</a>
+            </div> <!--main nav-->
+        </div> <!--main header-->
 
         <!--Below the #main-nav, create a div with a class of "section"-->
         <div class="section">
@@ -44,31 +48,40 @@
 
             <!--Inside of this .section div, create an h2 with a class of "section-title" and an id of "about" that holds the text: About Me-->
             <h2 id="about">Hobbies</h2>
-        <!--Below this h2, add the starwars.jpg image using the image tag-->
-        <ul>
-            <li>board games</li>
-            <li>video games</li>
-            <li>watch movies</li>
-        </ul>
+            <!--Below this h2, add the starwars.jpg image using the image tag-->
+            <ul>
+                <li>board games</li>
+                <li>video games</li>
+                <li>watch movies</li>
+            </ul>
+
+            <!--absolute positioning and z-index-->
+            <div id="boxes">
+                <div id="red"></div>
+                <div id="green"></div>
+                <div id="blue"></div>
+            </div>
+
        </div> <!--section-->
 
        <div class="section">
 
             <!--Inside of this .section div, create an h2 with a class of "section-title" and an id of "about" that holds the text: About Me-->
-            <h2 id="about">Hobbies</h2>
+            <h2 id="about">Schools</h2>
             <!--Below this h2, add the starwars.jpg image using the image tag-->
             <ol>
               <li>new boston central school</li>
               <li>asd</li>
               <li>goffstown high schools</li>
          </ol>
+
          </div> <!--section-->
 
        
         <!--Below the schools section, create a final div with an id of "footer"-->
         <div id="footer">    
          <!--Inside of the #footer, add a paragraph tag that holds the copywrite symbol, the year, the class name, and your name-->
-         <a href=""> Back to Top</a>
+         <a href="#top"> Back to Top</a>
          <p>&copy; 2021 | GDS111.21 | M Plantier</p>
         </div> <!--footer-->
     
