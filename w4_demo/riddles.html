@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 4 demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="week4.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="header">
+            <h1 id="title"> mitchell</h1>
+        </div> <!--header-->
+        <div id="nav">
+
+            <!--div that will center the nav buttons in the nav bar-->
+            <div id="buttons">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="schools.html" class="nav-link">SCHOOLS</a>
+                <a href="riddles.html" class="nav-link">RIDDLES</a>
+
+            </div> <!--buttons-->
+        </div> <!--nav-->
+        <div id="content">
+            <h2 class="section-title">Riddles</h2>
+            <!--reusable div for EACH question-->
+            <div class="questions">
+                <p class="question-text">1. what is always in front of you but cant be seen</p>
+                <div class="answer.btn">
+                    <!--creates clickable button; connected to JS function call-->
+                    <input class="get" type="button" value="ayy lmao" onclick="answer1();"/>
+                </div><!--answer.btn-->
+                <!--creates empty element space for JS to write answer to in page-->
+                <span class="the-answer" id="question1"></span>
+            </div><!--questions-->
+
+            <div class="questions">
+                <p class="question-text">2. what two words added together contain the most letters</p>
+                <div class="answer.btn">
+                    <!--creates clickable button; connected to JS function call-->
+                    <input class="get" type="button" value="answer" onclick="answer2();"/>
+                </div><!--answer.btn-->
+                <!--creates empty element space for JS to write answer to in page-->
+                <span class="the-answer" id="question2"></span>
+            </div><!--questions-->
+
+            <div class="questions">
+                <p class="question-text">3. what four letter word can be written forward, backwards, or upside down and still be read from left to right?</p>
+                <div class="answer.btn">
+                    <!--creates clickable button; connected to JS function call-->
+                    <input class="get" type="button" value="ANSWER" onclick="answer3();"/>
+                </div><!--answer.btn-->
+                <!--creates empty element space for JS to write answer to in page-->
+                <span class="the-answer" id="question3"></span>
+            </div><!--questions-->
+
+        </div><!--content-->
+        <div id="footer">  
+            <p class="copy">&copy; 2021 | mitchell plantier | gds111.21</p>
+        </div><!--footer-->
+
+
+    </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ body {
 }
 /*this entire thing is just spaghetti code i am so sorry*/
 #container{
+    background-image: url(images/boom.gif);
     background-color: slategrey;
     border:1px solid black;
     width:1000px;
@@ -55,9 +56,61 @@ h1{
     border:1px solid black;
     color:limegreen;
     font-size:30px;
-    padding-left: 15px;
+    padding: 15px;
 }
 
 #bio{
-    background-color: magenta;
+    float:left;
+    background-color: rgb(56, 0, 209);
+    margin-right:15px;
+    width:550px;
+}
+
+h2{
+    background-color: rgb(252, 0, 189);
+    margin:10px;
+    padding:10px;
+}
+
+h3{
+    background-color: aquamarine;
+    margin:10px;
+    padding:10px;
+}
+
+#hobbies{
+    /*position: absolute;*/
+    float:right;
+    background-color:blueviolet;
+    width:400px;
+    margin-bottom: 40px;
+}
+
+#schools{
+    float:left;
+    background-color: rgb(56, 0, 209);
+    margin-right:15px;
+    width:300px;
+}
+
+#backgroundimg{
+    width: 985px;
+    height:400px;
+    background-image: url(images/banana.jpg);
+}
+
+.questions{
+    border: 1px solid black;
+    margin: auto;
+}
+
+#footer{
+    clear:both;
+    margin:auto;
+    background-color: rgb(165, 101, 42);
+    border:1px solid cornflowerblue;
+    font-size:15px;
+    color:rgb(255, 0, 51);
+    font-weight:bold;
+    text-align: center;
 }

@@ -1,0 +1,26 @@
+/*background applies to all content unless id/class/element styles differently*/
+body{
+    background-image:url(images/background.png);
+    background-color:#dddddd;
+}
+
+div {
+    border:1px solid black;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+#wrapper{
+    width:1000px;
+    margin:auto;
+    box-shadow:3px 3px 8px rgb(0, 0, 0);
+    border-radius:10px /*rounds corners*/
+}
+
+
+
+
+
+
+
+/*PAGE SPECIFIC*/
