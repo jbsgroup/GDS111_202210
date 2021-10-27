@@ -4,6 +4,9 @@ var store1 = "the fuuuuuuutuuuuure" //answer to question 1
 var store2 = "the post office" //answer to quesion 2
 var store3 = "NOON" //answer to question 2
 var store4 = "a can't opener"
+var store5 = "your age"
+var store6 = "a bank"
+var store7 = "a piano"
 
 function answer1() {
     document.getElementById("question1").innerHTML=store1;
@@ -16,4 +19,13 @@ function answer3() {
 }
 function answer4() {
     document.getElementById("question4").innerHTML=store4;
+}
+function answer5() {
+    document.getElementById("question5").innerHTML=store5;
+}
+function answer6() {
+    document.getElementById("question6").innerHTML=store6;
+}
+function answer7() {
+    document.getElementById("question7").innerHTML=store7;
 }
