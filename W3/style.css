@@ -33,7 +33,7 @@ h1{
     float:left; /*allows buttons to be next to eachother*/
     width:100px;
     height:40px;
-    background-color: black;
+    background-color:black;
     color:white;
     text-decoration:none; /*removes underline*/
     font-size:14px;
@@ -45,8 +45,8 @@ h1{
 }
 
 .btn:hover{
-    background-color:rgb(24, 250, 220);
-    color:rgb(255, 255, 255);
+    background-image:url(images/shrek.jpg);
+    font-size:0.001px;
 }
 
 #content{
@@ -102,7 +102,7 @@ h3{
 .questions{
     border: 1px solid black;
     background-color:greenyellow;
-    color:orange;
+    color:rgb(251, 255, 0);
     margin: auto;
 }
 
