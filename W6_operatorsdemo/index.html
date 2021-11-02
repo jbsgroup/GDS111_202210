@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js operator demo</title>
+    <!--link to js-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="demo.js"></script>
+</head>
+<body onload="updateScreen();">
+    
+    <div id="wrapper">
+        <header>
+            <!--could use heading below or impress kt with a custom graphic-->
+            <h1>six shooter gun program</h1>
+            <!--but you will need some sort of image below this h1 for the heading on your assignment-->
+        </header>
+
+        <!--div box that holds the target image-->
+        
+        <div id="target">
+            <img src="images/?.jpg/png" alt=""/> <!--find image to put here-->
+        </div> <!--target-->
+
+        <!--nav box that holds info and buttons for games-->
+        <nav>
+            <!--left info box-->
+            <section id="left">
+
+                <!--ammo cache-->
+                <div id="total-ammo"></div>
+
+                <!--current ammo-->
+                <div id="current-ammo"></div>
+
+            </section><!--left-->
+            <!--right info box-->
+            <div id="right">
+
+                <form>
+                    <p class="btn">
+                        <input type="button" value="bang" class= "shoot" onclick="shoot();" />
+                    </p>
+
+                    <p class="btn">
+                        <input type="button" value="reloading" class= "reload" onclick="reload();" />
+                    </p>
+                </form>
+            </div><!--right-->
+
+        </nav><!--nav-->
+
+        <footer>
+            <p class="copy">&copy; 2021|html & javascript mplantier</p>
+        </footer>
+    </div> <!--wrapper-->
+
+    <!--html 5 audio players go below this line but inside of the body-->
+
+
+</body>
+</html>
