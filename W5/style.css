@@ -1,0 +1,31 @@
+/*six shooter demo file*/
+
+/*styling to see elements on the game page*/
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: darkgrey;
+}
+
+#wrapper{
+    width:980px;
+    margin:auto;
+}
+
+#button{
+    width: 500px;
+    height:200px;
+}
+
+div{
+    border:1px solid red;
+    margin:10px;
+    padding:10px;
+}
+
+footer{
+    text-align:center;
+}
+
+header{
+    text-align:center
+}
