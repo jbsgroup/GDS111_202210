@@ -21,7 +21,9 @@
         <!--div box that holds the target image-->
         
         <div id="target">
-            <img src="images/?.jpg/png" alt=""/> <!--find image to put here-->
+            <div id=picture>
+                <img src="images/bossbaby.jpg" alt="ayylmao" width=300px/> <!--find image to put here-->
+            </div>
         </div> <!--target-->
 
         <!--nav box that holds info and buttons for games-->
@@ -33,18 +35,18 @@
                 <div id="total-ammo"></div>
 
                 <!--current ammo-->
-                <div id="current-ammo"></div>
+                <div id="current-ammo">current ammo</div>
 
             </section><!--left-->
             <!--right info box-->
             <div id="right">
 
                 <form>
-                    <p class="btn">
+                    <p class="btn-right">
                         <input type="button" value="bang" class= "shoot" onclick="shoot();" />
                     </p>
 
-                    <p class="btn">
+                    <p class="btn-left">
                         <input type="button" value="reloading" class= "reload" onclick="reload();" />
                     </p>
                 </form>
@@ -58,6 +60,13 @@
     </div> <!--wrapper-->
 
     <!--html 5 audio players go below this line but inside of the body-->
+    <audio id="gun" src="sounds/shot1.mp3">
+        <p>your browser sucks and doesnt know html</p>
+    </audio>
+
+    <audio id="reload" src="sounds/reload1.mp3">
+        <p>your browser sucks and doesnt know html</p>
+    </audio>
 
 
 </body>
