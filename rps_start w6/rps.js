@@ -17,6 +17,19 @@ pics2[0] = "images/rock2.jpg"
 pics2[1] = "images/paper2.jpg"
 pics2[2] = "images/scissors2.jpg"
 
+//create array holding the button elements
+//document query elector all grabs all of one element type
+var btn = document.querySelectorAll("button")
+
+//check your stored data in the console
+console.log(btn) //used for testing, requires dev tools to be open
+
+//make buttons clickable and runnable also for the game
+//add event listener to each button
+btn[0].addEventListener("click", function (e) {play(0)})
+btn[1].addEventListener("click", function (e) {play(1)})
+btn[2].addEventListener("click", function (e) {play(2)})
+
 //arrays that store the player and computer options, one array for each
 //player ID-pId
 var pId= new Array("rock_p", "paper_p", "scissors_p") 
@@ -33,6 +46,8 @@ function swap(id, image){
 //play function
 function play(id){
     //setting up stored image paths (src) in js to match the html ones
+    //swap calls the function, this gets its code to run
+    //values supplies inside of () are passed into the parameter variables
     swap(pId[0], pics[0])
     swap(pId[1], pics[1])
     swap(pId[2], pics[2])
@@ -58,14 +73,14 @@ function play(id){
         //rock
         case 0://case for when p_choice == 0
             if (c_choice == 0){
-                //alert the user theres been a draw
-                alert("bloody hell lets call it a draw")
+                //call ShowResults() and pass correct values for pchoice cchoice and results
+                showResults("Rock!", "Rock", "its a draw")
             }
             else if (c_choice==1){
-                alert("you lost innit")
+                showResults("Rock!", "Paper", "You Lost")
             }
             else{
-                alert("you ROCK get it hAh")
+                showResults("Rock!", "Scissors", "You ROCK hAh get it")
             }
 
         //break statements breaks us out of switch/case
@@ -74,14 +89,13 @@ function play(id){
         //paper
         case 1:
             if (c_choice == 0){
-                //alert the user theres been a draw
-                alert("you won innit")
+                showResults("Paper", "Rock", "You won")
             }
             else if (c_choice==1){
-                alert("bloody hell its a draw")
+                showResults("Paper", "Paper", "DRAW")
             }
             else{
-                alert("you SUCK")
+                showResults("Scissors", "Paper", "you lose")
             }
 
         //break statements breaks us out of switch/case
@@ -91,17 +105,25 @@ function play(id){
         case 2:
             if (c_choice == 0){
                 //alert the user theres been a draw
-                alert("you SUCK")
+                showResults("Scissors!", "Rock", "You lost")
             }
             else if (c_choice==1){
-                alert("a winner is you")
+                showResults("Scissors", "Paper", "u win congrats")
             }
             else{
-                alert("its a draw innit")
+                showResults("Scissors", "Scissors", "DRAW")
             }
 
         //break statements breaks us out of switch/case
         break
-    }
+    }//switch statement
+
+}//play() close
+
+//function that writes the results back to the html page
+function showResults(pChoice, cChoice, results){
+    document.getElementById("pChoice").innerHTML = pChoice
+    document.getElementById("cChoice").innerHTML = cChoice
+    document.getElementById("results").innerHTML = results
 
 }
