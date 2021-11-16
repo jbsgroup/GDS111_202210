@@ -6,6 +6,7 @@ body{
     font-weight: bolder;
     color:orange;
     background-color:crimson;
+    background-image: url(images/background.png);
 }
 nav{
     display:flex;
