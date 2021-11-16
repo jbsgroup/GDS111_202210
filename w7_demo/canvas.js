@@ -39,4 +39,42 @@ galaxy.onload = function() {
     ctx.moveTo(0,600) //start position
     ctx.lineTo(800,0) //end position
     ctx.stroke() //drwas the line
+
+
+    //draws a circle
+    //requires a context.beginPath(), then context.arc(x, y, radius, start angle, end angle, counterclockwise or not)
+    //x starting x and y is the center of the circle, radius is center to outside
+    //isCounterClockwise is a boolean (true/false)
+    ctx.beginPath()
+    ctx.arc(400, 300, 50, 0, (2*Math.PI), false)
+    ctx.lineTo(450, 250)
+    ctx.closePath()
+    ctx.fill()  //fills above shape
+
+    //draw irregular shape
+    //set up the styling first
+    ctx.fillStyle="#55ddef"
+    ctx.strokeStyle="yellow"
+    ctx.lineWidth="2"
+
+    ctx.beginPath()  //begon for new shape
+    ctx.moveTo(650,100)//starting point of shape
+    ctx.lineTo(700,140)//draws line tothis next point
+    ctx.lineTo(675,200)
+    ctx.lineTo(625,200) 
+    ctx.lineTo(600,140)
+    ctx.closePath()   //reunites precious end point with starting point
+    ctx.fill()
+    ctx.stroke()
+
+    //draw another image to canvas
+    //creates an instance of the image
+    var mario = new Image()
+    //links to source of image file
+    mario.src="images/mario.png"
+
+    //callback function leads the image and draws is to the canveas each time the page loads
+    mario.onload=function(){
+        ctx.drawImage(mario, 625, 120, 40, 80)
+    }
 }
