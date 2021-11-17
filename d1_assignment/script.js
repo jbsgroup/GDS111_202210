@@ -26,6 +26,13 @@ shapes.onload = function() {
     ctx.fillRect(85, 302, 100, 100)  //context.fill goes x y width height
     ctx.strokeRect(85, 302, 100, 100) //context.strokerect is the same as before but it must match the fillrect if being applied to the same rectangle
 
+    ctx.strokeStyle="rgb(255,0,0)"       //outline color
+    ctx.lineWidth="5"            //width in pixels of stroke
+    ctx.moveTo(86,682) //start position
+    //next draw a line to the ending point xy
+    ctx.lineTo(278,550) //end position
+    ctx.stroke() //drwas the line
+
     //circle
     ctx.fillStyle = "#fff00" //solid fill of the shape
     ctx.strokeStyle="red"       //outline color
@@ -33,8 +40,43 @@ shapes.onload = function() {
 
     ctx.beginPath()
     ctx.arc(386, 442, 68, 0, (2*Math.PI), false)
-    ctx.lineTo(450, 250)
+    //ctx.lineTo(450, 250)
     ctx.closePath()
     ctx.fill()  //fills above shape
+    ctx.stroke()
+
+    //pentagon
+    ctx.fillStyle="#ff00ff"
+    ctx.strokeStyle="00fff"
+    ctx.lineWidth="5"
+
+    ctx.beginPath()  //begon for new shape
+    ctx.moveTo(560,310)
+    ctx.lineTo(666,285)
+    ctx.lineTo(723,380)
+    ctx.lineTo(650,465)
+    ctx.lineTo(548,421)
+    ctx.closePath()   //reunites precious end point with starting point
+    ctx.fill()
+    ctx.stroke()
+
+    //star
+    ctx.fillStyle="#55ddef"
+    ctx.strokeStyle="yellow"
+    ctx.lineWidth="2"
+
+    ctx.beginPath()  //begon for new shape
+    ctx.moveTo(636,497)//starting point of shape
+    ctx.lineTo(668,554)//draws line tothis next point
+    ctx.lineTo(734,567)
+    ctx.lineTo(689,615)
+    ctx.lineTo(697,682)
+    ctx.lineTo(636,654)
+    ctx.lineTo(575,682)
+    ctx.lineTo(583,615)
+    ctx.lineTo(538,568)
+    ctx.lineTo(602,554)
+    ctx.closePath()   //reunites precious end point with starting point
+    ctx.fill()
     ctx.stroke()
 }
