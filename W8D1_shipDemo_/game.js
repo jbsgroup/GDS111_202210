@@ -70,7 +70,7 @@ function animate(){
     ship.draw()
 
     //ship appears on left side of leaves on right
-    if (ship.x > canvas.width() + 25){
+    if (ship.x > canvas.width() + 100){
         //if the current ship x coord is greater than beyond the canvas wisth + 25 (size of the ship)
 
         //move ship x coord
@@ -90,7 +90,7 @@ function animate(){
         //if the current ship x coord is greater than beyond the canvas wisth + 25 (size of the ship)
 
         //move ship x coord
-        ship.x = 825 //800 is x coord of right margin, 25 is length of ship
+        ship.x = 875 //800 is x coord of right margin, 25 is length of ship
     }
 
         //leaves bottom, appears at right
