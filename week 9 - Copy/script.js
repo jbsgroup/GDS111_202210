@@ -106,7 +106,7 @@ function PlayerShip(){
 
         }
 
-        context.beginPath()
+        /*context.beginPath()
 
         context.fillStyle = "hotpink" //ship color
         context.moveTo(0,-13)
@@ -115,7 +115,12 @@ function PlayerShip(){
         context.lineTo(0,-13)
         context.closePath()
         context.fill()
-        context.restore()
+        context.restore()*/
+        var imageObj = new Image()
+        imageObj.src = "images/shrek.png" //png for transparency
+        imageObj.x = 400
+        imageObj.y = 300
+        console.dir(imageObj)
     }
     
     this.move = function(){
@@ -211,9 +216,7 @@ function keyPressUp(e){
     if(e.keyCode === 39){
         ship.right = false
     }
-    if(e.keyCode === 40){
-        ship.down = false
-    }
+    //not coding for down because ship doesnt go that way
 
 } //keypressup
 
@@ -235,7 +238,7 @@ gameStates[1] = function(){ //gameplay state
     //display score
     context.save()
 
-    context.font = "15px Comic Sans MS" //make your own later
+    context.font = "15px Arial" //make your own later
     context.fillStyle = "white" 
     context.fillText("Score: " + score.toString(), c.width-150, 30)
     context.restore()
@@ -245,11 +248,8 @@ gameStates[1] = function(){ //gameplay state
     if(ship.up == true){
         ship.vy = -10
     }
-    else if(ship.down == true){
-        ship.vy = 10
-    }
     else{
-        ship.vy = 0
+        ship.vy = 3
     }
 
     if(ship.left == true){

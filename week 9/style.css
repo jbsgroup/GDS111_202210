@@ -1,0 +1,17 @@
+#canvas{
+	border:3px solid #707172;
+	background-color:black;
+	background-image:url(images/swamp.jpg);
+	box-shadow:1px 1px 10px black;
+}
+
+body{
+    background-color:hotpink;
+}
+
+#game{
+    width:800px;
+    height:600px;
+    margin:auto;
+}
+
