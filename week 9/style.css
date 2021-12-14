@@ -21,7 +21,7 @@ body{
     border: 1px solid black;
     width:800px;
     margin:auto;
-    align-content: center;
+    text-align:center;
     background-color:yellow;
     color:purple;
 }
@@ -38,5 +38,5 @@ body{
     border: 1px solid red;
     background-color:teal;
     color:tomato;
-
+    text-align:center;
 }
