@@ -1,12 +1,29 @@
 #canvas{
-	border:3px solid #707172;
 	background-color:black;
 	background-image:url(images/swamp.jpg);
 	box-shadow:1px 1px 10px black;
 }
 
+#container{
+    width:960px;
+    margin:auto;
+    border:1px solid blue;
+    background-color:lime;
+}
+
 body{
     background-color:hotpink;
+    font-family: 'Smooch', cursive;
+}
+
+#header{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    border: 1px solid black;
+    width:800px;
+    margin:auto;
+    align-content: center;
+    background-color:yellow;
+    color:purple;
 }
 
 #game{
@@ -15,3 +32,11 @@ body{
     margin:auto;
 }
 
+#footer{
+    width:800px;
+    margin:auto;
+    border: 1px solid red;
+    background-color:teal;
+    color:tomato;
+
+}

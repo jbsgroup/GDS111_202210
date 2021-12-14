@@ -17,6 +17,19 @@ var gameStates = []
 var currentState = 0
 var ship
 
+//--------ADDED FOR W10D1
+var shipSprite = new Image()
+shipSprite.src = "images/shrek.png"
+shipSprite.onload = function(){}
+
+var flameSprite = new Image()
+flameSprite.src = "images/donkey.png"
+flameSprite.onload = function(){}
+
+var asteroidSprite = new Image()
+asteroidSprite.src = "images/farquad.png"
+asteroidSprite.onload = function(){}
+
 //random value generator function
 function randomRange(high, low){
 
@@ -27,9 +40,9 @@ function randomRange(high, low){
 //function/class for the asteroids
 function Asteroid(){
 
-    this.radius = randomRange(10,2)
-    this.x = randomRange(c.width - this.radius, 0 + this.radius)
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height
+    this.radius = randomRange(25,15)
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.height
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
     this.vx = randomRange(-5, -10) //horizontal velocity
     this.vy = randomRange(10, 5)  //vertical velocity
     this.color = "white"
@@ -37,11 +50,13 @@ function Asteroid(){
         context.save()
         context.beginPath()
         context.fillStyle = this.color
-        context.arc(this.x, this.y, this.radius,0, 2*Math.PI, true)
+        //context.arc(this.x, this.y, this.radius,0, 2*Math.PI, true)
+        context.drawImage(asteroidSprite, this.x-this.radius, this.y-this.radius, this.radius*2, this.radius*2)
         context.closePath()
         context.fill()
         context.restore()
     }
+
 
 }  //asteroid
 
@@ -84,7 +99,7 @@ function PlayerShip(){
         context.translate(this.x, this.y)
 
         //flame for the ship
-        if(this.up == true){
+        if(this.right == true){
             context.save()
             //adjust flame length for flicker effect
             if(this.flamelength == 30){
@@ -94,7 +109,7 @@ function PlayerShip(){
                 this.flamelength = 30
             }
 
-            context.fillStyle = "lime" //flame color
+            /*context.fillStyle = "lime" //flame color
             context.beginPath()
             context.moveTo(0, this.flamelength)
             context.lineTo(5, 5)
@@ -102,19 +117,29 @@ function PlayerShip(){
             context.lineTo(0,this.flamelength)
             context.closePath()
             context.fill()
+            context.restore()*/
+            context.drawImage(flameSprite,-40,-20,40,40)
+            console.log ("flameSprite drawImage()")
+    
+            //if invincible... do something
             context.restore()
-
         }
 
-        context.beginPath()
+        /*context.beginPath()
 
-        context.fillStyle = "hotpink" //ship color
+        *context.fillStyle = "hotpink" //ship color
         context.moveTo(0,-13)
         context.lineTo(10,10)
         context.lineTo(-10,10)
         context.lineTo(0,-13)
         context.closePath()
         context.fill()
+        context.restore()*/
+        //---------ADDED FOR W10D1
+        context.drawImage(shipSprite,-20,-20,40,40)
+        console.log ("shipSprite drawImage()")
+
+        //if invincible... do something
         context.restore()
     }
     
@@ -162,15 +187,15 @@ function keyPressDown(e){
         if(e.keyCode === 38){
             ship.up = true
         }
-        if(e.keyCode === 37){
-            ship.left = true
+        if(e.keyCode === 40){
+            ship.left = true   //actually ship down
         }
         if(e.keyCode === 39){
             ship.right = true
         }
-        if (e.keyCode === 40){
+        /*if (e.keyCode === 40){
             ship.down === true
-        }
+        }*/
     }//ifgameover = false close
 
     if(gameOver == true){
@@ -205,15 +230,15 @@ function keyPressUp(e){
     if(e.keyCode === 38){
         ship.up = false
     }
-    if(e.keyCode === 37){
-        ship.left = false
+    if(e.keyCode === 40){
+        ship.left = false  //actually ship down
     }
     if(e.keyCode === 39){
         ship.right = false
     }
-    if(e.keyCode === 40){
+    /*if(e.keyCode === 40){
         ship.down = false
-    }
+    }*/
 
 } //keypressup
 
@@ -246,20 +271,20 @@ gameStates[1] = function(){ //gameplay state
         ship.vy = -10
     }
     else if(ship.down == true){
-        ship.vy = 10
+        ship.vy = 10             //useless but dont want to risk removing
     }
     else{
         ship.vy = 0
     }
 
-    if(ship.left == true){
-        ship.vx = -3
+    if(ship.left == true){  //actually ship down
+        ship.vy = 10
     }
     else if(ship.right == true){
         ship.vx = 3
     }
     else{
-        ship.vx = 0
+        ship.vx = -3
     }
 
 
@@ -286,7 +311,7 @@ gameStates[1] = function(){ //gameplay state
         }
 
         if(gameOver == false){
-            asteroids[i].y += asteroids[i].vy
+            asteroids[i].x += asteroids[i].vx
         }
         asteroids[i].draw()
     }
@@ -307,7 +332,7 @@ gameStates[2] = function(){ //game over
 
     context.save()
     context.font = "30px Comic Sans MS"
-    context.fillStyle = "white"
+    context.fillStyle = "coral"
     context.textAlign = "center"
     context.fillText("ur bad lmao ur puny score was "+score.toString(), c.width/2, c.height/2 - 30)
     context.font = "15px Comic Sans MS"
@@ -334,9 +359,9 @@ function main(){
 function scoreTimer(){
     if(gameOver==false){
         score++ //adds +1 to game score on screen
-        if(score % 5 == 0){ //if socre /5 has a remainer of 0
+        if(score % 2 == 0){ //if socre /5 has a remainer of 0
 
-            numAsteroids += 5 //add more asteroids
+            numAsteroids += 10 //add more asteroids
             console.log(numAsteroids)
         }
         setTimeout(scoreTimer, 1000)
