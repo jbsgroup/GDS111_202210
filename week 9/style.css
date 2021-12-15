@@ -9,15 +9,16 @@
     margin:auto;
     border:1px solid blue;
     background-color:lime;
+    padding:10px;
 }
 
 body{
-    background-color:hotpink;
-    font-family: 'Smooch', cursive;
+    background-image:url(images/background.jpg);
+    font-family: 'Nova Cut', cursive;
 }
 
 #header{
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Nova Cut', cursive;
     border: 1px solid black;
     width:800px;
     margin:auto;
@@ -29,7 +30,9 @@ body{
 #game{
     width:800px;
     height:600px;
-    margin:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:80px;
 }
 
 #footer{

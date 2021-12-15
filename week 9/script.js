@@ -17,6 +17,10 @@ var gameStates = []
 var currentState = 0
 var ship
 
+var invincible = false
+var powerUp = new Array()
+var numPowerUp = 1
+
 //--------ADDED FOR W10D1
 var shipSprite = new Image()
 shipSprite.src = "images/shrek.png"
@@ -29,6 +33,18 @@ flameSprite.onload = function(){}
 var asteroidSprite = new Image()
 asteroidSprite.src = "images/farquad.png"
 asteroidSprite.onload = function(){}
+
+var powerSprite = new Image()
+powerSprite.src = "images/fiona.png"
+powerSprite.onload = function (){}
+
+var menuImg = new Image()
+menuImg.src = "images/menu.png"
+menuImg.onload = function(){}
+
+var endImg = new Image()
+endImg.src = "images/end.png"
+endImg.onload = function(){}
 
 //random value generator function
 function randomRange(high, low){
@@ -59,6 +75,38 @@ function Asteroid(){
 
 
 }  //asteroid
+
+function Powerup(){
+    this.radius = randomRange(30,29);
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) //-c.height
+    this.vx = randomRange(-5, -10)
+    this.vy = randomRange(50,50)
+    this.color = "purple"
+ 
+    this.draw = function(){
+      
+        context.save();
+        context.beginPath();
+        context.fillStyle = this.color;
+        /*context.arc(this.x,this.y,this.radius,0,2*Math.PI,true);*/
+        context.drawImage(powerSprite, this.x - this.radius, this.y - this.radius, this.radius*2, this.radius*2)
+        context.closePath();
+        context.fill();
+        context.restore();
+    }
+}
+
+function gameStart(){
+    //for loop to create the intances of the asteroids
+    for(var i = 0; i<numPowerUp; i++){
+        powerUp[i] = new Powerup(); //creates loop
+        
+        //create the instance of the ship for the game
+        ship = new PlayerShip()
+    }
+ 
+}
 
 
 function gameStart(){
@@ -213,6 +261,8 @@ function keyPressDown(e){
                 currentState=0
              }
 
+
+
             else{
                 gameStart()
                 gameOver = false
@@ -246,12 +296,13 @@ function keyPressUp(e){
 
 gameStates[0] = function(){//start screen
     context.save()
+    context.drawImage(menuImg,0,0,800,600)
     context.font = "30px Comic Sans MS"
-    context.fillStyle = "cyan"
+    context.fillStyle = "hotpink"
     context.textAlign = "center"
-    context.fillText("Asteroid Avoidance", c.width/2, c.height/2 - 30)
+    context.fillText("Escape farquad", c.width/2, c.height/2 - 50)
     context.font = "15px Comic Sans MS"
-    context.fillText("Press ENTER to start!", c.width/2, c.height/2+20)
+    context.fillText("Press ENTER to start!", c.width/2, c.height/2+40)
     context.restore()
 }
 
@@ -265,6 +316,7 @@ gameStates[1] = function(){ //gameplay state
     context.fillText("Score: " + score.toString(), c.width-150, 30)
     context.restore()
 
+    //document.getElementById("star").play();
     //w9d2 show gravity stuff
 
     if(ship.up == true){
@@ -295,7 +347,7 @@ gameStates[1] = function(){ //gameplay state
         var dist = Math.sqrt((dX*dX) + (dY*dY))
 
         //check for collision and if so end game
-        if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))){
+        if(detectCollision(dist, (ship.h/2 + asteroids[i].radius)) && invincible == false){
             //console.log(secret stuff for w9d2")
             gameOver = true
             currentState = 2  //replaces removeEventListener needs
@@ -326,11 +378,51 @@ gameStates[1] = function(){ //gameplay state
         //add new asteroid to array
         asteroids.push(new Asteroid())
     }
+
+    for(var i = 0; i<powerUp.length; i++){
+        //using the distance formula to find distance between ship and asteroid
+        var dX = ship.x - powerUp[i].x;
+        var dY = ship.y - powerUp[i].y;
+        var dist = Math.sqrt((dX*dX)+(dY*dY));
+        
+        //checks for collision with asteroid and ends game
+        if(detectCollision(dist, (ship.h/2 + powerUp[i].radius)) && invincible == false){
+           // console.log("We collided with Asteroid " + i);
+            gameOver = false
+            invincible = true
+            if(invincible == true){
+                
+                setTimeout(TimeInterval, 5000)
+            }
+            
+        }
+ 
+        //checks to see if asteroid ios off screen
+        if(powerUp[i].y > c.height + powerUp[i].radius){
+            //reset steroids position off screen 
+            powerUp[i].y = randomRange(c.height - powerUp[i].radius, 0 + powerUp[i].radius)-c.height;
+            powerUp[i].x = randomRange(c.width - [i].radius, 0 + powerUp[i].radius);
+        }
+        if(gameOver == false){
+            powerUp[i].x += powerUp[i].vx;
+        }
+        powerUp[i].draw();
+    }
+ 
+    ship.draw();
+    if(gameOver == false){
+      ship.move();  
+    }
+    while(powerUp.length < numPowerUp){
+        powerUp.push(new Powerup());
+    }
+
 }
 
 gameStates[2] = function(){ //game over
 
     context.save()
+    context.drawImage(endImg,0,0,800,600)
     context.font = "30px Comic Sans MS"
     context.fillStyle = "coral"
     context.textAlign = "center"
@@ -357,17 +449,31 @@ function main(){
 }//main close
 
 function scoreTimer(){
-    if(gameOver==false){
-        score++ //adds +1 to game score on screen
-        if(score % 2 == 0){ //if socre /5 has a remainer of 0
-
-            numAsteroids += 10 //add more asteroids
-            console.log(numAsteroids)
+    if(gameOver == false){
+        score++;
+        //console.log(score);
+        if(score % 2 == 0){
+            numAsteroids += 10;
+           
+            console.log(numAsteroids);
+            
         }
-        setTimeout(scoreTimer, 1000)
+        if(score % 10 == 0){
+            numPowerUp += 1
+            console.log(numPowerUp)
+        }
+ 
+        setTimeout(scoreTimer,1000)
     }
-}//scoreTimer close
+}
 //scoreTimer()
+
+function TimeInterval(){
+ 
+    invincible = false
+    clearTimeout()
+}
+
 
 function detectCollision(distance, calcDistance){
     return distance < calcDistance //will return true or false falue
