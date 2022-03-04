@@ -12,7 +12,7 @@ wiz.force=1
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src="images/barlow.jpg"
+sky.img.src="images/sky.png"
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
@@ -68,7 +68,7 @@ clouds.img.src=`images/mrt.jpg`
 
 //farbackground
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/better_hills.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
