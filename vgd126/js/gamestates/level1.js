@@ -16,7 +16,7 @@ sky.img.src="images/sky.png"
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
-ground.img.src="images/mrt.jpg"
+ground.img.src="images/dirt.png"
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
@@ -61,7 +61,7 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //background
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+bg.img.src=`images/foreground.png`
 
 var clouds = new GameObject({x:level.x,y:level.y})
 clouds.img.src=`images/mrt.jpg`
@@ -86,7 +86,6 @@ for(let i=0; i<100; i++)
 	bullets[i].y=-10000
 	bullets[i].changeState(`walk`)
 }
-
 //console.log(bullets)
 
 
@@ -140,7 +139,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		//sounds.play(`splode`,1)
+		sounds.play(`boing`,1)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -158,7 +157,7 @@ gameStates[`level1`] = function()
 		{
 			wiz.changeState(`attack`)
 			shotTimer = shotDelay
-			//console.log(`Boom`)
+			console.log(`Boom`)
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
@@ -166,7 +165,7 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].y = wiz.y + 20;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			//sounds.play(`splode`,1)
+			sounds.play(`bang`,1)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)

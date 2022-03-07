@@ -2,7 +2,7 @@
 This file contains all of the code for the Main Menu
 ----------------------------------*/
 
-var startButton = new GameObject({width: 128, height: 128}).makeSprite(buttonData)
+var startButton = new GameObject({width: 256, height: 128}).makeSprite(buttonData)
 
 var menuBackground = new GameObject();
 menuBackground.img.src = "images/mrt.jpg"
@@ -18,6 +18,8 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
+			sounds.play(`bgm`,0)
+			sounds.bgm.loop = true
 		}
 
 		//Hover Effect Graffic

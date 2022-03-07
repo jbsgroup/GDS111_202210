@@ -1,6 +1,6 @@
 var buttonData = {
     info:{
-        src:'images/snale.png'
+        src:'images/button.png'
     },
     states:{
         idle:{
@@ -8,7 +8,7 @@ var buttonData = {
             cycle:false,
             frames:
             [
-                {width:128, height:128, startX:0, startY:0}
+                {width:256, height:128, startX:0, startY:0}
             ]
         },
         hover:{
@@ -16,7 +16,7 @@ var buttonData = {
             cycle:false,
             frames:
             [
-                {width:128, height:128, startX:1024, startY:0}
+                {width:256, height:128, startX:0, startY:128}
             ]
         }
     }
