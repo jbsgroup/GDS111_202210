@@ -86,7 +86,7 @@ var playerData ={
 		//The attack animation 
 		attack:
 		{
-			fps:5,
+			fps:4,
 			cycle:true,
 			//width:300,
 			frames:
@@ -96,6 +96,25 @@ var playerData ={
 				{width:128, height:128, startX:128*2, startY:512},
 				{width:128, height:128, startX:128*3, startY:512}
 			]
+		},
+		
+		bullet:
+		{
+			fps:3,
+			cycle:true,
+			//width:300,
+				frames:
+			[
+				{width:42, height:26, startX:0, startY:896},
+				{width:42, height:26, startX:42, startY:896},
+				{width:42, height:26, startX:84, startY:896},
+				{width:42, height:26, startX:126, startY:896},
+				{width:42, height:26, startX:168, startY:896},
+				{width:42, height:26, startX:210, startY:896},
+				{width:42, height:26, startX:252, startY:896},
+				{width:42, height:26, startX:294, startY:896}
+			]
+			
 		}
 	}
 		
